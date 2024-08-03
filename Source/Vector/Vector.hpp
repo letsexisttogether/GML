@@ -1,6 +1,5 @@
 #pragma once
 
-#include <algorithm>
 #include <cmath>
 #include <cstddef>
 #include <optional>
@@ -11,22 +10,15 @@
 #define VectorTDef(returnType) Template returnType \
     VectorT
 
-#define CtorParam(exactValue, variableName) \
-    std::enable_if_t<_Size == exactValue, const _InternalType> variableName
-
-#define DeclareGetMethod(startValue, methodName, index) \
-    template <std::size_t _InternalSize = _Size> \
-    typename std::enable_if<_InternalSize >= startValue, _Type&>::type \
-    methodName() noexcept \
+#define DefineGetMethod(name, index) \
+    _Type& name() noexcept \
     { \
-        return m_Data[index]; \
+        return this->m_Data[index]; \
     } \
     \
-    template <std::size_t _InternalSize = _Size> \
-    typename std::enable_if<_InternalSize >= startValue, _Type>::type \
-    methodName() const noexcept \
+    _Type name() const noexcept \
     { \
-        return m_Data[index]; \
+        return this->m_Data[index]; \
     }
 
 Template
@@ -48,35 +40,14 @@ public:
 
     Vector(const _Type value);
 
-    // Forgive me God for this
-    template <class _InternalType = _Type>
-    Vector(CtorParam(2, x), CtorParam(2, y))
-        : m_Data{ x, y }
-    {}
-
-    template <class _InternalType = _Type>
-    Vector(CtorParam(3, x), CtorParam(3, y), CtorParam(3, z))
-        : m_Data{ x, y, z }
-    {}
-
-    template <class _InternalType = _Type>
-    Vector(CtorParam(4, x), CtorParam(4, y), CtorParam(4, z), CtorParam(4, w))
-        : m_Data{ x, y, z, w }
-    {}
-
-    ~Vector() = default;
-
-    DeclareGetMethod(1, X, 0)
-    DeclareGetMethod(2, Y, 1)
-    DeclareGetMethod(3, Z, 2)
-    DeclareGetMethod(4, W, 3)
+    virtual ~Vector() = default;
 
     Length GetLength() const noexcept;
 
     Vector& operator = (const Vector&) noexcept = default;
     Vector& operator = (Vector&&) noexcept = default;
 
-private:
+protected:
     Data m_Data{};
     mutable std::optional<Length> m_Length{};
 };
@@ -112,5 +83,3 @@ VectorTDef(typename VectorT::Length)::GetLength() const noexcept
 #undef VectorT
 #undef VectorTDef
 #undef Template
-
-#undef DeclareGetMethod

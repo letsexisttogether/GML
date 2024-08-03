@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Vector/Vector.hpp"
+#include "Vector/Vector3.hpp"
 
-using Vec3f = Vector<float, 3>;
-using Vec3i = Vector<float, 3>;
+using Vec3f = Vector3<float>;

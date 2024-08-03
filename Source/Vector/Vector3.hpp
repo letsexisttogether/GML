@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Vector/Vector.hpp"
+#include "Vector.hpp"
+
 #define Template template <class _Type>
 #define Vector3T Vector3<_Type>
 #define Vector3TDef(returnType) Template returnType \
@@ -123,5 +124,9 @@ Vector3TDef(Vector3T)::operator / (const Vector3& vector) const noexcept
 {
     return { X() / vector.X(), Y() / vector.Y(), Z() / vector.Z() };
 }
+
+#undef Vector3TDef
+#undef Vector3T
+#undef Template
 
 #undef DefineGetMethod

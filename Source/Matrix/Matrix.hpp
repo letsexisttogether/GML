@@ -25,8 +25,10 @@ public:
 
     ~Matrix() = default;
 
-    Data& GetRawData() noexcept;
-    const Data& GetRawData() const noexcept;
+    const _Type* GetRawData() const noexcept;
+
+    static std::size_t GetColumns() noexcept;
+    static std::size_t GetRows() noexcept;
 
     _Type* operator [] (const std::size_t column) noexcept;
     const _Type* operator [] (const std::size_t column) const noexcept;
@@ -42,14 +44,20 @@ private:
 };
 
 
-MatrixTDef(typename MatrixT::Data&)::GetRawData() noexcept
+MatrixTDef(const _Type*)::GetRawData() const noexcept
 {
-    return m_Data;
+    return &m_Data[0][0];
 }
 
-MatrixTDef(const typename MatrixT::Data&)::GetRawData() const noexcept
+
+MatrixTDef(std::size_t)::GetColumns() noexcept
 {
-    return m_Data;
+    return _Columns;
+}
+
+MatrixTDef(std::size_t)::GetRows() noexcept
+{
+    return _Rows;
 }
 
 MatrixTDef(_Type*)::operator [] (const std::size_t column) noexcept
@@ -79,7 +87,6 @@ MatrixTDef(MatrixT)::GetIdentity() noexcept
 
     return matrix;
 }
-
 
 #undef MatrixTDef
 #undef MatrixT

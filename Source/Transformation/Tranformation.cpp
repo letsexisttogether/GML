@@ -25,7 +25,7 @@ Mat4x4f GetTranslation(const Vec3f& translationVector) noexcept
     return matrix;
 }
 
-Mat4x4f GetRotation(const Vec3f::Angle& angle, const Vec3f& rotAxis)
+Mat4x4f GetRotation(const Angle angle, const Vec3f& rotAxis)
     noexcept
 {
     Mat4x4f matrix{};

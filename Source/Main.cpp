@@ -1,20 +1,24 @@
 #include <iostream>
 
 #include "Matrix/MatrixDefenitions.hpp"
-#include "Vector/VectorsDefinitions.hpp"
+#include "Transformation/Transformation.hpp"
+#include "Vector/VectorDefinitions.hpp"
 
 std::int32_t main()
 {
     std::cout << "Hello, GML" << std::endl;
 
-    const Vec3f firstVec{ 2.0f, -3.0f, 1.0f };
-    const Vec3f secondVec{ 4.0f, -1.0f, 5.0f };
-    
-    const Vec3f result{ firstVec.Cross(secondVec) };
+    Vec3f vec{ 5.0f, 4.0f, 3.0f };
 
-    std::cout << result.X() << ' ' << result.Y() << ' ' << result.Z();
+    std::cout << vec.X() << ' ' << vec.Y() << ' ' << vec.Z() << '\n';
 
-    std::cout << sizeof(result) << std::endl;
+
+    Vec3f normalizedVec{ vec.GetNormalized() };
+
+    std::cout << normalizedVec.X() << ' ' << normalizedVec.Y() 
+        << ' ' << normalizedVec.Z() << '\n';
+
+    std::cout << normalizedVec.GetLength() << std::endl;
 
     return EXIT_SUCCESS;
 }

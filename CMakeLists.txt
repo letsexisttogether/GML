@@ -4,9 +4,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 # Graphics mathematical library
-project(GLM LANGUAGES CXX)
+project(GML LANGUAGES CXX)
 
-# Change to add_library()
 add_executable(${PROJECT_NAME})
+
+# add_library(${PROJECT_NAME} STATIC)
 
 add_subdirectory(Source)

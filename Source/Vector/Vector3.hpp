@@ -2,6 +2,8 @@
 
 #include "Vector.hpp"
 
+#include "../Utility/Naming.hpp"
+
 #define Template template <class _Type>
 #define Vector3T Vector3<_Type>
 #define Vector3TDef(returnType) Template returnType \
@@ -12,8 +14,6 @@ class Vector3 : public Vector<_Type, 3>
 {
 public:
     using Base = Vector<_Type, 3>;
-
-    using Angle = float;
 
 public:
     Vector3() = default;
@@ -70,7 +70,7 @@ Vector3TDef()::Vector3(const _Type x, const _Type y, const _Type z)
     this->m_Data[2] = z;
 }
 
-Vector3TDef(typename Vector3T::Angle)::CalculateAngleBetween
+Vector3TDef(Angle)::CalculateAngleBetween
     (const Vector3& vector) const noexcept
 {
     const typename Vector3::Length thisLength = GetLength();

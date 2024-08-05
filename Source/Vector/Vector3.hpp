@@ -11,6 +11,8 @@ Template
 class Vector3 : public Vector<_Type, 3>
 {
 public:
+    using Base = Vector<_Type, 3>;
+
     using Angle = float;
 
 public:
@@ -18,6 +20,9 @@ public:
     Vector3(const Vector3&) = default;
     Vector3(Vector3&&) = default;
 
+    Vector3(const Base& vector);
+
+    Vector3(const _Type value);
     Vector3(const _Type x, const _Type y, const _Type z);
 
     ~Vector3() = default;
@@ -49,13 +54,21 @@ public:
     Vector3& operator = (Vector3&&) noexcept = default;
 };
 
+
+Vector3TDef()::Vector3(const Base& vector)
+    : Base{ vector }
+{}
+
+Vector3TDef()::Vector3(const _Type value)
+    : Base{ value }
+{}
+
 Vector3TDef()::Vector3(const _Type x, const _Type y, const _Type z)
 {
     this->m_Data[0] = x;
     this->m_Data[1] = y;
     this->m_Data[2] = z;
 }
-
 
 Vector3TDef(typename Vector3T::Angle)::CalculateAngleBetween
     (const Vector3& vector) const noexcept

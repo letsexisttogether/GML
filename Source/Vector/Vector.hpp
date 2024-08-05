@@ -43,9 +43,15 @@ public:
     virtual ~Vector() = default;
 
     Length GetLength() const noexcept;
+    
+    void Normalize() noexcept;
+    Vector GetNormalized() const noexcept;
 
     Vector& operator = (const Vector&) noexcept = default;
     Vector& operator = (Vector&&) noexcept = default;
+
+private:
+    void CalculateLength() const noexcept;
 
 protected:
     Data m_Data{};
@@ -63,20 +69,44 @@ VectorTDef()::Vector(const _Type value)
 
 VectorTDef(typename VectorT::Length)::GetLength() const noexcept
 {
-    if (m_Length)
+    if (!m_Length)
     {
-        return m_Length.value();
+        CalculateLength();
     }
-
-    Length length{};
-    for (std::size_t i = 0; i < _Size; ++i)
-    {
-        length += std::pow((m_Data[i], 2));
-    }
-
-    m_Length = std::sqrt(length);
 
     return m_Length.value();
+}
+
+VectorTDef(void)::Normalize() noexcept
+{
+    const Length length = GetLength();
+
+    for (std::size_t i = 0; i < _Size; ++i)
+    {
+        m_Data[i] /= length;
+    }
+
+    CalculateLength();
+}
+
+VectorTDef(VectorT)::GetNormalized() const noexcept
+{
+    Vector vector{ *this };
+    vector.Normalize();
+
+    return vector;
+}
+
+VectorTDef(void)::CalculateLength() const noexcept
+{
+    m_Length = Length{};
+
+    for (std::size_t i = 0; i < _Size; ++i)
+    {
+        m_Length.value() += std::pow(m_Data[i], 2);
+    }
+
+    m_Length.value() = std::sqrt(m_Length.value());
 }
 
 

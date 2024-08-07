@@ -1,1 +1,1 @@
-#include "MatrixDefenitions.hpp"
+#include "MatrixDefinitions.hpp"

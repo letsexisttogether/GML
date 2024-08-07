@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Vector.hpp"
-#include <cstdint>
 
 template <class _Type>
 class Vector3 : public Vector<_Type, 3>

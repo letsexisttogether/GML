@@ -4,12 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/ext/matrix_clip_space.hpp>
 
-#include "Matrix/MatrixDefenitions.hpp"
-#include "Utility/Operations.hpp"
-#include "Variations/Projection.hpp"
-#include "Variations/Transformation.hpp"
-#include "Vector/VectorDefinitions.hpp"
-#include "glm/ext/vector_float3.hpp"
+#include "Matrix/Definitions.hpp"
 
 template <class _Matrix>
 void PrintMatrix(const _Matrix& matrix) noexcept;

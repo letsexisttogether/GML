@@ -1,6 +1,6 @@
-#include "Operations.hpp"
+#include "../Operations.hpp"
 
-#include "Variables.hpp"
+#include "../Variables.hpp"
 
 Angle ConvertToRadians(const Angle degrees) noexcept
 {

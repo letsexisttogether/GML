@@ -1,8 +1,6 @@
-#include "Transformation.hpp"
+#include "../Transformation.hpp"
 
 #include <cmath>
-
-#include "Matrix/MatrixDefenitions.hpp"
 
 Mat4x4f GetScale(const Vec3f& scaleVector) noexcept
 {

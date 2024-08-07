@@ -1,7 +1,8 @@
 #pragma once
 
-#include "../Matrix/MatrixDefenitions.hpp"
-#include "../Vector/VectorDefinitions.hpp"
+#include "../Matrix/Definitions.hpp"
+#include "../Vector/Definitions.hpp"
+#include "../Utility/Naming.hpp"
 
 Mat4x4f GetScale(const Vec3f& scaleVector) noexcept;
 

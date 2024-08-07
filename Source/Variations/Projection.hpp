@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Matrix/MatrixDefenitions.hpp"
+#include "../Matrix/Definitions.hpp"
 
 Mat4x4f GetOrthogonal(const float left, const float right, 
     const float bottom, const float top, const float near, const float far)

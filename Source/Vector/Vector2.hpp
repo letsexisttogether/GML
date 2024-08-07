@@ -3,10 +3,10 @@
 #include "Vector.hpp"
 
 template <class _Type>
-class Vector2 : public Vector<_Type, 3>
+class Vector2 : public Vector<_Type, 2>
 {
 public:
-    using Base = Vector<_Type, 3>;
+    using Base = Vector<_Type, 2>;
 
 public:
     Vector2() = default;

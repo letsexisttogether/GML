@@ -25,3 +25,6 @@ DefineSquareMatrixFamily(1);
 DefineSquareMatrixFamily(2);
 DefineSquareMatrixFamily(3);
 DefineSquareMatrixFamily(4);
+
+#undef DefineSquareMatrixFamily
+#undef DefineSquareMatrixAbbr

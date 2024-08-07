@@ -1,6 +1,8 @@
 #pragma once
 
+#include "Vector2.hpp"
 #include "Vector3.hpp"
+#include "Vector4.hpp"
 
 #define DefineVectorAbbr(size, abbreviation, type) \
     using Vec##size##abbreviation = Vector##size<type>
@@ -21,7 +23,9 @@
     DefineVectorAbbr(size, f, float); \
     DefineVectorAbbr(size, d, double) \
 
+DefineVectorFamily(2);
 DefineVectorFamily(3);
+DefineVectorFamily(4);
 
 #undef DefineVectorFamily
 #undef DefineVectorAbbr

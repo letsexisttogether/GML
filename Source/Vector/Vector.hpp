@@ -37,9 +37,6 @@ public:
     void Normalize() noexcept;
     Vector GetNormalized() const noexcept;
 
-    // TODO: remove this out 
-    const Data& GetRawData() const noexcept { return m_Data; }
-
     Vector operator + (const _Type value) const noexcept;
     Vector operator + (const Vector& vector) const noexcept;
 

@@ -29,7 +29,7 @@ VectorTDef(void)::Normalize() noexcept
 {
     const Length length = GetLength();
 
-    for (std::size_t i = 0; i < _Size; ++i)
+    for (Index i = 0; i < _Size; ++i)
     {
         m_Data[i] /= length;
     }
@@ -49,7 +49,7 @@ VectorTDef(void)::CalculateLength() const noexcept
 {
     m_Length = Length{};
 
-    for (std::size_t i = 0; i < _Size; ++i)
+    for (Index i = 0; i < _Size; ++i)
     {
         m_Length.value() += (m_Data[i] * m_Data[i]);
     }

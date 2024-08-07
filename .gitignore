@@ -6,3 +6,6 @@ build/
 compile_commands.json
 neovim.json
 
+# Dependencies
+Dependencies/
+

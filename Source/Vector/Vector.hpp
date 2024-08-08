@@ -30,7 +30,7 @@ public:
 
     Vector(const _Type value);
 
-    virtual ~Vector() = default;
+    ~Vector() = default;
 
     Length GetLength() const noexcept;
     
@@ -55,8 +55,6 @@ public:
     Vector& operator = (Vector&&) noexcept = default;
 
 private:
-    void CalculateLength() const noexcept;
-
     Vector DoOperation(const _Type value, Operation operation)
         const noexcept;
     Vector DoOperation(const Vector& vector, Operation operation)
@@ -64,5 +62,4 @@ private:
 
 protected:
     Data m_Data{};
-    mutable std::optional<Length> m_Length{};
 };

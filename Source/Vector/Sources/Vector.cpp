@@ -1,6 +1,7 @@
 #include "../Vector.hpp"
 
 #include <algorithm>
+#include <cmath>
 #include <cstdint>
 #include <cstring>
 #include <functional>
@@ -17,12 +18,7 @@ VectorTDef()::Vector(const _Type value)
 
 VectorTDef(typename VectorT::Length)::GetLength() const noexcept
 {
-    if (!m_Length)
-    {
-        CalculateLength();
-    }
-
-    return m_Length.value();
+    return std::sqrt(Dot(*this));
 }
 
 VectorTDef(void)::Normalize() noexcept
@@ -33,8 +29,6 @@ VectorTDef(void)::Normalize() noexcept
     {
         m_Data[i] /= length;
     }
-
-    CalculateLength();
 }
 
 VectorTDef(VectorT)::GetNormalized() const noexcept
@@ -43,18 +37,6 @@ VectorTDef(VectorT)::GetNormalized() const noexcept
     vector.Normalize();
 
     return vector;
-}
-
-VectorTDef(void)::CalculateLength() const noexcept
-{
-    m_Length = Length{};
-
-    for (Index i = 0; i < _Size; ++i)
-    {
-        m_Length.value() += (m_Data[i] * m_Data[i]);
-    }
-
-    m_Length.value() = std::sqrt(m_Length.value());
 }
 
 VectorTDef(VectorT)::operator + (const _Type value) const noexcept

@@ -6,7 +6,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 # Graphics mathematical library
 project(GML LANGUAGES CXX)
 
-# add_executable(${PROJECT_NAME})
+#[[
+add_executable(${PROJECT_NAME})
+
+target_sources(${PROJECT_NAME} 
+    PRIVATE Source/Main.cpp)
+]]
 
 add_library(${PROJECT_NAME} STATIC)
 

@@ -1,10 +1,11 @@
-#include <ios>
 #include <iostream>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/ext/matrix_clip_space.hpp>
+#include <optional>
 
 #include "Matrix/Definitions.hpp"
+#include "Vector/Definitions.hpp"
 
 template <class _Matrix>
 void PrintMatrix(const _Matrix& matrix) noexcept;
@@ -17,9 +18,24 @@ std::int32_t main()
 {
     std::cout << "Hello, GML" << std::endl;
 
-    const Mat4x4f matrix{};
+    GML::Vec2f vec{ 2.0f, 3.0f };
 
-    std::cout << std::endl;
+    {
+        GML::Vec2f arr[3]
+        {
+            { 1.0f, 2.0f },
+            { 3.0f, 4.0f },
+            { 5.0f, 6.0f },
+        };
+
+        for (float* i = (float*)arr; i < (float*)arr + 3 * 2; 
+            i += 2)
+        {
+            std::cout << "X: " << *i << " Y: " << *(i + 1) << std::endl;
+        }
+    }
+
+    std::cout << vec.GetLength() << std::endl;
 
 
     return EXIT_SUCCESS;

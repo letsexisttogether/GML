@@ -2,6 +2,8 @@
 
 #include "Defines.hpp"
 
+GMLSpaceStart
+
 #define Template template <class _Type>
 #define Vector4T Vector4<_Type>
 #define Vector4TDef(returnType) Template returnType \
@@ -48,3 +50,5 @@ Vector4TDef(Vector4T&)::operator = (Base&& vector) noexcept
 }
 
 DefineVectorFamily(4);
+
+GMLSpaceEnd

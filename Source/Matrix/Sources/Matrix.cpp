@@ -2,6 +2,8 @@
 
 #include "Defines.hpp"
 
+GMLSpaceStart
+
 #define Template template <class _Type, std::uint8_t _Columns, \
     std::uint8_t _Rows>
 #define MatrixT Matrix<_Type, _Columns, _Rows>
@@ -77,3 +79,5 @@ DefineSqaureMatrixFamily(1);
 DefineSqaureMatrixFamily(2);
 DefineSqaureMatrixFamily(3);
 DefineSqaureMatrixFamily(4);
+
+GMLSpaceEnd

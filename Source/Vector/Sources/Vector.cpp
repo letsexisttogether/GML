@@ -6,6 +6,8 @@
 #include <cstring>
 #include <functional>
 
+GMLSpaceStart
+
 #define Template template <class _Type, std::uint8_t _Size>
 #define VectorT Vector<_Type, _Size>
 #define VectorTDef(returnType) Template returnType \
@@ -138,3 +140,5 @@ DefineVectorByType(std::uint64_t);
 
 DefineVectorByType(float);
 DefineVectorByType(double);
+
+GMLSpaceEnd

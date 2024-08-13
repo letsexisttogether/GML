@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+GMLSpaceStart
+
 Mat4x4f GetScale(const Vec3f& scaleVector) noexcept
 {
     Mat4x4f matrix{ Mat4x4f::GetIdentity() };
@@ -66,3 +68,5 @@ Mat4x4f GetRotation(const Angle angle, const Vec3f& rotAxis)
 
     return matrix;
 }
+
+GMLSpaceEnd

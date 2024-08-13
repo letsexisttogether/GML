@@ -2,6 +2,8 @@
 
 #include "Matrix.hpp"
 
+GMLSpaceStart
+
 #define DefineSquareMatrixAbbr(size, abbreviation, type) \
     using Mat##size##x##size##abbreviation = Matrix<type, size, size>
 
@@ -28,3 +30,5 @@ DefineSquareMatrixFamily(4);
 
 #undef DefineSquareMatrixFamily
 #undef DefineSquareMatrixAbbr
+
+GMLSpaceEnd

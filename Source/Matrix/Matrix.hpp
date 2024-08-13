@@ -3,6 +3,10 @@
 #include <cstddef>
 #include <type_traits>
 
+#include "../Utility/Namespace.hpp"
+
+GMLSpaceStart
+
 // Matrix class does not force you to create a square matrix.
 // But good luck trying to do something else with it.
 // Uses a column-major order 
@@ -41,3 +45,5 @@ public:
 private:
     Data m_Data{};
 };
+
+GMLSpaceEnd

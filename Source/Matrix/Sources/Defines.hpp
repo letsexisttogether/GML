@@ -1,5 +1,9 @@
 #pragma once
 
+#include "../../Utility/Namespace.hpp"
+
+GMLSpaceStart
+
 #define DefineSquareMatrix(size, type) \
     template class Matrix<type, size, size>
 
@@ -18,3 +22,5 @@
     \
     DefineSquareMatrix(size, float); \
     DefineSquareMatrix(size, double) \
+
+GMLSpaceEnd

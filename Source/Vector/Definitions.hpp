@@ -3,6 +3,9 @@
 #include "Vector2.hpp"
 #include "Vector3.hpp"
 #include "Vector4.hpp"
+#include "../Utility/Namespace.hpp"
+
+GMLSpaceStart
 
 #define DefineVectorAbbr(size, abbreviation, type) \
     using Vec##size##abbreviation = Vector##size<type>
@@ -29,3 +32,5 @@ DefineVectorFamily(4);
 
 #undef DefineVectorFamily
 #undef DefineVectorAbbr
+
+GMLSpaceEnd

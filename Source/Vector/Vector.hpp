@@ -2,8 +2,11 @@
 
 #include <cstdint>
 #include <functional>
-#include <optional>
 #include <type_traits>
+
+#include "../Utility/Namespace.hpp"
+
+GMLSpaceStart
 
 template <class _Type, std::uint8_t _Size>
 class Vector
@@ -63,3 +66,5 @@ private:
 protected:
     Data m_Data{};
 };
+
+GMLSpaceEnd

@@ -1,5 +1,9 @@
 #pragma once
 
+#include "../../Utility/Namespace.hpp"
+
+GMLSpaceStart
+
 #define DefineVector(size, type) \
     template class Vector##size<type>
 
@@ -30,3 +34,5 @@
     { \
         return this->m_Data[index]; \
     }
+
+GMLSpaceEnd

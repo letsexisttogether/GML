@@ -2,6 +2,8 @@
 
 #include "Vector.hpp"
 
+GMLSpaceStart
+
 template <class _Type>
 class Vector2 : public Vector<_Type, 2>
 {
@@ -33,3 +35,5 @@ public:
     Vector2& operator = (const Base& vector) noexcept;
     Vector2& operator = (Base&& vector) noexcept;
 };
+
+GMLSpaceEnd

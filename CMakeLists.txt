@@ -16,4 +16,3 @@ target_sources(${PROJECT_NAME}
 add_library(${PROJECT_NAME} STATIC)
 
 add_subdirectory(Source)
-add_subdirectory(Dependencies)

@@ -37,6 +37,8 @@ public:
 
     Index GetSize() const noexcept; 
 
+    const _Type* GetAsArray() const noexcept; 
+    
     Length GetLength() const noexcept;
     
     void Normalize() noexcept;

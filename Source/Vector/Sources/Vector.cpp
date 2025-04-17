@@ -23,6 +23,11 @@ VectorTDef(typename VectorT::Index)::GetSize() const noexcept
     return _Size;
 }
 
+VectorTDef(const _Type*)::GetAsArray() const noexcept
+{
+    return m_Data;
+}
+
 VectorTDef(typename VectorT::Length)::GetLength() const noexcept
 {
     return std::sqrt(Dot(*this));

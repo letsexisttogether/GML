@@ -35,6 +35,8 @@ public:
 
     ~Vector() = default;
 
+    Index GetSize() const noexcept; 
+
     Length GetLength() const noexcept;
     
     void Normalize() noexcept;

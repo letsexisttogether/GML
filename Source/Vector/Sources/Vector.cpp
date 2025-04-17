@@ -18,6 +18,11 @@ VectorTDef()::Vector(const _Type value)
     std::fill(m_Data, m_Data + _Size, value);
 }
 
+VectorTDef(typename VectorT::Index)::GetSize() const noexcept
+{
+    return _Size;
+}
+
 VectorTDef(typename VectorT::Length)::GetLength() const noexcept
 {
     return std::sqrt(Dot(*this));
